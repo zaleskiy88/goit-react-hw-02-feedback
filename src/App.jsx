@@ -1,8 +1,7 @@
 import { FeedbackOptions } from './components/FeedbackOptions/FeedbackOptions';
 import { Statistics } from './components/Statistics/Statistics';
-import { Section } from 'components/Section/Section';
-import { Notification } from 'components/Notification/Notification';
-import { ContainerDiv } from 'components/Ui/ContainerDiv.styled';
+import { Section } from 'components/ui/Section/Section';
+import { ContainerDiv } from 'components/ui/ContainerDiv.styled';
 import { Component } from 'react';
 
 export class App extends Component {
@@ -19,6 +18,7 @@ export class App extends Component {
       return { [name]: prevState[name] + 1 };
     });
   };
+
   //====================utils===========
   countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
@@ -32,20 +32,19 @@ export class App extends Component {
   //==============================
   render() {
     const { good, neutral, bad } = this.state;
-    const options = { good: 'Good', neutral: 'Neutral', bad: 'Bad' };
 
     return (
       <ContainerDiv>
         <Section title="Please leave feedback">
           <FeedbackOptions
             onLeaveFeedback={this.feedbackClickHandler}
-            options={options}
+            options={Object.keys(this.state)}
           />
         </Section>
 
         <Section title="Statistics">
           {this.countTotalFeedback() === 0 ? (
-            <Notification message="There is no feedback" />
+            <p>There is no feedback</p>
           ) : (
             <Statistics
               good={good}
