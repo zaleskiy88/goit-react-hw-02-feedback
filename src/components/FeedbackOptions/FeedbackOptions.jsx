@@ -1,4 +1,4 @@
-import { Button } from '../ui/Buttons.styled';
+import { Button } from '../../ui/Buttons.styled';
 import { capitalizeFirstLowercaseRest } from 'utils/capitalizeFirstLowercaseRest';
 
 export const FeedbackOptions = ({ onLeaveFeedback, options }) => {

@@ -1,7 +1,7 @@
 import { FeedbackOptions } from './components/FeedbackOptions/FeedbackOptions';
 import { Statistics } from './components/Statistics/Statistics';
-import { Section } from 'components/ui/Section/Section';
-import { ContainerDiv } from 'components/ui/ContainerDiv.styled';
+import { Section } from 'ui/Section/Section';
+import { ContainerDiv } from 'ui/ContainerDiv.styled';
 import { Component } from 'react';
 
 export class App extends Component {
